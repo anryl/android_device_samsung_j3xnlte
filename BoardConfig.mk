@@ -4,8 +4,6 @@ TARGET_OTA_ASSERT_DEVICE := j3xnlte,j3xnltexx,j2xlte,j2xltedd,j3xlte
 # inherit from the proprietary version
 -include vendor/samsung/j3xnlte/BoardConfigVendor.mk
 
-COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
-
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -27,8 +25,6 @@ BOARD_USE_EMMC := true
 DEVICE_RESOLUTION := 720x1280
 
 TARGET_BOOTLOADER_BOARD_NAME := SC9830I
-
-BOARD_VENDOR := samsung
 
 # Include path
 #TARGET_SPECIFIC_HEADER_PATH := device/samsung/j3xnlte/include
@@ -88,7 +84,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HARDWARE_CLASS := hardware/samsung/cmhw/
 
 # Init
-TARGET_PROVIDES_INIT_RC := true
 TARGET_INIT_VENDOR_LIB := libinit_j3lte
 TARGET_RECOVERY_DEVICE_MODULES := libinit_j3lte
 TARGET_UNIFIED_DEVICE := true
@@ -143,6 +138,7 @@ ENABLE_WEBGL := true
 #######################################################
 # camera configs
 USE_CAMERA_STUB := true
+BOARD_USE_SPRD_COLORFORMAT := true
 #back camera rotation capture
 TARGET_BOARD_BACK_CAMERA_ROTATION := false
 #front camera rotation capture
@@ -161,8 +157,8 @@ TARGET_BOARD_CAMERA_READOTP_METHOD := 1
 #face detect
 TARGET_BOARD_CAMERA_FACE_DETECT := true
 TARGET_BOARD_CAMERA_FD_LIB := omron
-#hdr
-TARGET_BOARD_CAMERA_HDR_CAPTURE := true
+#hdr (disable for android 7)
+TARGET_BOARD_CAMERA_HDR_CAPTURE := false
 #sensor interface
 TARGET_BOARD_BACK_CAMERA_INTERFACE := mipi
 TARGET_BOARD_FRONT_CAMERA_INTERFACE := mipi
@@ -178,8 +174,8 @@ TARGET_BOARD_CAMERA_ROTATION_CAPTURE := false
 TARGET_BOARD_CAMERA_NO_AUTOFOCUS_DEV := false
 #uv denoise enable
 TARGET_BOARD_CAMERA_CAPTURE_DENOISE := false
-#y denoise enable
-TARGET_BOARD_CAMERA_Y_DENOISE := true
+#y denoise enable (disable for android 7)
+TARGET_BOARD_CAMERA_Y_DENOISE := false
 #select continuous auto focus
 TARGET_BOARD_CAMERA_CAF := true
 TARGET_BOARD_CAMERA_NO_FLASH_DEV := false

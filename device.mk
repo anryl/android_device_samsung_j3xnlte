@@ -171,7 +171,6 @@ PRODUCT_COPY_FILES += \
 
 # WPA supplicant
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     libwpa_client \
     wpa_supplicant
@@ -207,7 +206,6 @@ PRODUCT_PACKAGES += \
     init.sc8830_ss.rc \
     init.wifi.rc \
     ueventd.sc8830.rc \
-    init.rc \
     sswap \
     bgcompact \
     ffu
@@ -265,7 +263,6 @@ PRODUCT_PACKAGES += \
     libion \
     libmemoryheapion \
     libefuse \
-    dhcpcd \
     libomxil-bellagio \
     libstagefright_sprd_h264dec \
     libstagefright_sprd_h264enc \
@@ -292,10 +289,6 @@ PRODUCT_PACKAGES += \
     iwnpi \
     liboemcrypto \
     modem_control \
-    dhcp6s \
-    dhcp6c \
-    dhcp6ctl \
-    dhcp6relay \
     cp_diskserver \
     phasecheckserver \
     radvd \
